@@ -5,7 +5,7 @@
 // announce updates without interrupting current speech.
 // ─────────────────────────────────────────────────────────
 
-const WORDS    = ['Frontend Dev', 'React Expert', 'TypeScript Fan', 'IBM Engineer'];
+const WORDS    = ['Frontend Dev', 'React Expert', 'TypeScript Fan', 'IBM Tech Lead'];
 const TYPE_MS  = 80;
 const DEL_MS   = 45;
 const PAUSE_MS = 1800;

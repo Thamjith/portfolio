@@ -17,6 +17,9 @@ import { initReveal }      from './modules/reveal.js';
 import { initTilt }        from './modules/tilt.js';
 import { initSkillStagger } from './modules/skillStagger.js';
 
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = String(new Date().getFullYear());
+
 // Enable Vercel Analytics only for production builds.
 if (import.meta.env.PROD) {
   inject();
