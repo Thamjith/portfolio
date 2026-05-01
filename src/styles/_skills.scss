@@ -1,0 +1,128 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// SKILLS SECTION
+// ─────────────────────────────────────────────────────────
+
+#skills {
+  padding: t.$sp-30 t.$sp-15;
+  background: var(--bg2) !important;
+  position: relative;
+  overflow: hidden;
+
+  @include t.lg {
+    padding: t.$sp-20 t.$sp-6;
+  }
+
+  @include t.sm {
+    padding: t.$sp-20 t.$sp-4;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 200, 200, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+
+    html.light & {
+      background: radial-gradient(circle, rgba(0, 150, 180, 0.06) 0%, transparent 70%);
+    }
+  }
+
+  .skills-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .skills-header {
+    text-align: center;
+    margin-bottom: t.$sp-20;
+
+    .section-label {
+      font-family: t.$font-mono;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: t.$sp-5;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+    }
+  }
+
+  .skill-category {
+    text-align: center;
+    margin-bottom: t.$sp-10;
+
+    .skill-category-title {
+      font-family: t.$font-mono;
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: t.$sp-5;
+    }
+  }
+
+  .skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  .skill-tag {
+    padding: t.$sp-3 t.$sp-5 + 2px; // 12px 22px
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: t.$radius-pill;
+    font-family: t.$font-mono;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    transition: all t.$ease-base;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 230, 200, 0.08), rgba(100, 100, 255, 0.08));
+      opacity: 0;
+      transition: opacity t.$ease-base;
+    }
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 200, 200, 0.15);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &.featured {
+      border-color: rgba(0, 230, 200, 0.35);
+      color: var(--text);
+      font-size: 13px;
+      padding: 14px 26px;
+    }
+  }
+}

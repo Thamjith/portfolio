@@ -1,0 +1,249 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// NAVIGATION — primary nav + mobile menu + hamburger
+// ─────────────────────────────────────────────────────────
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: t.$z-nav;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: t.$sp-5 t.$sp-15;
+  background: transparent;
+  transition: background t.$ease-slow, backdrop-filter t.$ease-slow;
+
+  @include t.lg {
+    padding: t.$sp-4 t.$sp-6;
+  }
+
+  &.scrolled {
+    background: rgba(5, 8, 16, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+
+    html.light & {
+      background: rgba(240, 244, 255, 0.85);
+    }
+  }
+
+  .nav-logo {
+    font-family: t.$font-mono;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-decoration: none;
+    cursor: none;
+
+    @include t.coarse {
+      cursor: pointer;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: t.$sp-10;
+    list-style: none;
+
+    @include t.lg {
+      display: none;
+    }
+
+    a {
+      font-family: t.$font-mono;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color t.$ease-base;
+      position: relative;
+      cursor: none;
+
+      @include t.coarse {
+        cursor: pointer;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform t.$ease-base;
+      }
+
+      &:hover {
+        color: var(--accent);
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+        border-radius: t.$radius-sm;
+      }
+    }
+  }
+
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: t.$sp-3;
+  }
+
+  // ── Theme toggle ───────────────────────────────────────
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: t.$radius-circle;
+    border: 1.5px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color t.$ease-base, background t.$ease-base, transform t.$ease-base;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    @include t.coarse {
+      cursor: pointer;
+    }
+
+    &:hover {
+      border-color: var(--accent);
+      transform: scale(1.08);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    // Sun & moon icons (positioned absolutely, animated in/out)
+    .icon-sun,
+    .icon-moon {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      transition: transform t.$ease-spring, opacity t.$ease-slow;
+    }
+
+    html:not(.light) & {
+      .icon-sun  { transform: rotate(-90deg) scale(0); opacity: 0; }
+      .icon-moon { transform: rotate(0deg) scale(1);   opacity: 1; }
+    }
+
+    html.light & {
+      .icon-sun  { transform: rotate(0deg) scale(1);   opacity: 1; }
+      .icon-moon { transform: rotate(90deg) scale(0);  opacity: 0; }
+    }
+  }
+
+  // ── Hamburger (mobile only) ────────────────────────────
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+
+    @include t.lg {
+      display: flex;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: t.$radius-sm;
+    }
+
+    .hamburger-line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform t.$ease-base, opacity t.$ease-base, background t.$ease-base;
+    }
+
+    // Animated ✕ when open
+    &[aria-expanded='true'] {
+      .hamburger-line:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+      .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .hamburger-line:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    }
+  }
+}
+
+// ── Mobile menu overlay ────────────────────────────────────
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: t.$z-mobile-menu;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-top: 80px; // clear the nav bar
+
+  // Only reachable on narrow viewports; hide from AT when closed
+  &[aria-hidden='true'] {
+    visibility: hidden;
+  }
+
+  &.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: t.$sp-10;
+  }
+
+  a {
+    font-family: t.$font-mono;
+    font-size: 28px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: color t.$ease-base;
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 6px;
+      border-radius: t.$radius-sm;
+    }
+  }
+}

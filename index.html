@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thamjith Thaha — Senior Software Engineer specialising in TypeScript, React, and enterprise-scale frontend systems." />
+  <title>Thamjith Thaha — Senior Software Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+  <!-- Skip navigation for keyboard / screen-reader users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Decorative particle canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Custom cursor (hidden for coarse-pointer / touch devices via CSS) -->
+  <div id="cursor" aria-hidden="true">
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+  </div>
+
+  <!-- ── Navigation ── -->
+  <nav id="nav" aria-label="Primary navigation">
+    <a class="nav-logo" href="#hero" aria-label="Thamjith Thaha — back to top">TT.</a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <!-- Theme toggle -->
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        aria-label="Switch to light mode"
+        aria-pressed="false"
+        type="button"
+      >
+        <!-- Sun -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <line x1="12" y1="2"     x2="12" y2="4"></line>
+          <line x1="12" y1="20"    x2="12" y2="22"></line>
+          <line x1="4.22" y1="4.22"   x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="2"  y1="12"    x2="4"  y2="12"></line>
+          <line x1="20" y1="12"    x2="22" y2="12"></line>
+          <line x1="4.22" y1="19.78"  x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"></line>
+        </svg>
+        <!-- Moon -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <!-- Hamburger (mobile only) -->
+      <button
+        class="hamburger"
+        id="hamburger"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="hamburger-line" aria-hidden="true"></span>
+        <span class="hamburger-line" aria-hidden="true"></span>
+        <span class="hamburger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile navigation overlay -->
+  <nav
+    id="mobile-menu"
+    class="mobile-menu"
+    aria-label="Mobile navigation"
+    aria-hidden="true"
+  >
+    <ul role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Main content ── -->
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section id="hero" aria-label="Introduction">
+      <p class="hero-eyebrow">Available for opportunities · Kerala, India</p>
+      <h1 class="hero-name">
+        <span class="line1">
+          <span class="glitch-wrap" data-text="THAMJITH" aria-label="THAMJITH">THAMJITH</span>
+        </span>
+        <span class="line2">THAHA</span>
+      </h1>
+      <p class="hero-title">
+        Senior Software Engineer ·
+        <span class="typed-word" id="typed" aria-live="polite" aria-atomic="true"></span>
+      </p>
+      <div class="hero-cta">
+        <a href="#experience" class="btn btn-primary">View Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-label="About me">
+      <div class="about-content">
+        <p class="section-label reveal">01 · About</p>
+        <h2 class="section-title reveal reveal-delay-1">
+          Building the <span class="highlight">future</span><br>one line at a time.
+        </h2>
+        <p class="about-text reveal reveal-delay-2">
+          Senior Software Engineer with 5+ years crafting scalable, performant systems at IBM and beyond.
+          Passionate about clean architecture, modern frontend engineering, and delivering meaningful user experiences.
+        </p>
+        <p class="about-text reveal reveal-delay-3">
+          Currently at <span class="highlight">IBM, Kochi</span> — working at the intersection of enterprise-grade systems and cutting-edge web technology.
+        </p>
+        <div class="about-stats" role="list" aria-label="Career highlights">
+          <div class="stat-card reveal reveal-delay-1" role="listitem">
+            <div class="stat-num" aria-label="5 plus years">5+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-2" role="listitem">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Companies</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-3" role="listitem">
+            <div class="stat-num">IBM</div>
+            <div class="stat-label">Current Employer</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-4" role="listitem">
+            <div class="stat-num" aria-label="Infinite">∞</div>
+            <div class="stat-label">Problems Solved</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual reveal" role="img" aria-label="Decorative orbital animation">
+        <div class="orbit-container">
+          <div class="orbit-center" aria-hidden="true">💻</div>
+          <div class="orbit-ring" aria-hidden="true">
+            <div class="orbit-dot"></div>
+          </div>
+          <div class="orbit-ring" aria-hidden="true">
+            <div class="orbit-dot orbit-dot-2"></div>
+          </div>
+          <div class="orbit-ring" aria-hidden="true">
+            <div class="orbit-dot orbit-dot-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" aria-label="Technical skills">
+      <div class="skills-inner">
+        <header class="skills-header">
+          <p class="section-label reveal">02 · Skills</p>
+          <h2 class="section-title reveal reveal-delay-1">Technology <span class="highlight">Stack</span></h2>
+        </header>
+
+        <div class="skill-category reveal reveal-delay-2">
+          <h3 class="skill-category-title">Core Languages &amp; Frameworks</h3>
+          <ul class="skills-cloud" role="list" aria-label="Languages and frameworks">
+            <li class="skill-tag featured" role="listitem">TypeScript</li>
+            <li class="skill-tag featured" role="listitem">React</li>
+            <li class="skill-tag featured" role="listitem">Java</li>
+            <li class="skill-tag featured" role="listitem">Spring Boot</li>
+            <li class="skill-tag" role="listitem">JavaScript</li>
+            <li class="skill-tag" role="listitem">Node.js</li>
+            <li class="skill-tag" role="listitem">HTML / CSS</li>
+          </ul>
+        </div>
+
+        <div class="skill-category reveal reveal-delay-3">
+          <h3 class="skill-category-title">Data &amp; Tools</h3>
+          <ul class="skills-cloud" role="list" aria-label="Data and tools">
+            <li class="skill-tag featured" role="listitem">MySQL</li>
+            <li class="skill-tag featured" role="listitem">Zod</li>
+            <li class="skill-tag featured" role="listitem">Git</li>
+            <li class="skill-tag" role="listitem">REST APIs</li>
+            <li class="skill-tag" role="listitem">OOP</li>
+            <li class="skill-tag" role="listitem">Agile / Scrum</li>
+            <li class="skill-tag" role="listitem">Unit Testing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" aria-label="Work experience">
+      <div class="deco-num" aria-hidden="true">EX</div>
+      <header class="exp-header">
+        <p class="section-label reveal">03 · Experience</p>
+        <h2 class="section-title reveal reveal-delay-1">Where I've <span class="highlight">Worked</span></h2>
+      </header>
+
+      <ol class="timeline" aria-label="Career timeline">
+
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <article class="exp-card" aria-label="IBM — Senior Software Engineer">
+            <div class="exp-meta">
+              <h3 class="exp-company">IBM</h3>
+              <span class="exp-period">
+                <time datetime="2023-08">Aug 2023</time> — <time>Present</time>
+              </span>
+            </div>
+            <p class="exp-role">Senior Software Engineer</p>
+            <p class="exp-location">
+              <span aria-hidden="true">📍</span>
+              <span>Kochi, India</span>
+            </p>
+            <ul class="exp-bullets">
+              <li>Architected and delivered enterprise-scale frontend systems with TypeScript and React.</li>
+              <li>Collaborated cross-functionally with product, design, and backend teams in a fast-paced Agile environment.</li>
+              <li>Drove code quality initiatives, conducting thorough code reviews and establishing best practices.</li>
+              <li>Mentored junior engineers and contributed to technical roadmap decisions.</li>
+            </ul>
+            <ul class="exp-tech" aria-label="Technologies used" role="list">
+              <li class="tech-chip">TypeScript</li>
+              <li class="tech-chip">React</li>
+              <li class="tech-chip">Java</li>
+              <li class="tech-chip">Spring Boot</li>
+              <li class="tech-chip">MySQL</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <article class="exp-card" aria-label="InApp — Senior Software Engineer">
+            <div class="exp-meta">
+              <h3 class="exp-company">InApp</h3>
+              <span class="exp-period">
+                <time datetime="2022-03">Mar 2022</time> — <time datetime="2023-08">Aug 2023</time>
+              </span>
+            </div>
+            <p class="exp-role">Senior Software Engineer</p>
+            <p class="exp-location">
+              <span aria-hidden="true">📍</span>
+              <span>Thiruvananthapuram, India</span>
+            </p>
+            <ul class="exp-bullets">
+              <li>Led development of full-stack web applications with focus on scalable frontend architecture.</li>
+              <li>Implemented robust data validation pipelines using Zod and TypeScript for type-safe APIs.</li>
+              <li>Optimised application performance and reduced load times through modern engineering patterns.</li>
+              <li>Delivered features end-to-end from design handoff to production deployment.</li>
+            </ul>
+            <ul class="exp-tech" aria-label="Technologies used" role="list">
+              <li class="tech-chip">TypeScript</li>
+              <li class="tech-chip">React</li>
+              <li class="tech-chip">Zod</li>
+              <li class="tech-chip">REST APIs</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <article class="exp-card" aria-label="Vanilla Networks — Software Engineer">
+            <div class="exp-meta">
+              <h3 class="exp-company">Vanilla Networks</h3>
+              <span class="exp-period">
+                <time datetime="2020-02">Feb 2020</time> — <time datetime="2022-03">Mar 2022</time>
+              </span>
+            </div>
+            <p class="exp-role">Software Engineer</p>
+            <p class="exp-location">
+              <span aria-hidden="true">📍</span>
+              <span>Thiruvananthapuram, India</span>
+            </p>
+            <ul class="exp-bullets">
+              <li>Built responsive web interfaces and backend services for client-facing products.</li>
+              <li>Applied OOP principles and design patterns to create maintainable, extensible codebases.</li>
+              <li>Collaborated in cross-functional teams to ship features on schedule and within scope.</li>
+            </ul>
+            <ul class="exp-tech" aria-label="Technologies used" role="list">
+              <li class="tech-chip">JavaScript</li>
+              <li class="tech-chip">Java</li>
+              <li class="tech-chip">MySQL</li>
+              <li class="tech-chip">Git</li>
+            </ul>
+          </article>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- Education -->
+    <section id="education" aria-label="Education">
+      <div class="edu-inner">
+        <p class="section-label reveal">04 · Education</p>
+        <h2 class="section-title reveal reveal-delay-1">Academic <span class="highlight">Foundation</span></h2>
+        <article class="edu-card reveal reveal-delay-2" aria-label="Bachelor of Computer Applications — University of Kerala">
+          <h3 class="edu-degree">Bachelor of Computer Applications</h3>
+          <p class="edu-school">University of Kerala</p>
+          <p class="edu-year">
+            <time datetime="2016">2016</time> — <time datetime="2019">2019</time>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-label="Contact">
+      <div class="contact-inner">
+        <p class="section-label reveal" style="text-align:center;">05 · Contact</p>
+        <h2 class="contact-title reveal reveal-delay-1">Let's <span>Build</span><br>Together.</h2>
+        <p class="contact-sub reveal reveal-delay-2">
+          Open to senior engineering roles, exciting projects, and meaningful collaborations.
+          Don't hesitate to reach out.
+        </p>
+        <ul class="contact-links reveal reveal-delay-3" role="list">
+          <li>
+            <a href="mailto:jithuthaha8@gmail.com" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/thamjith-thaha" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+              <span class="sr-only">(opens in new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://thamjiththaha.com/resume/thamjiththaha.pdf" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+              Resume PDF
+              <span class="sr-only">(opens in new tab)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <span>© 2026 Thamjith Thaha</span>
+    <span>Built with passion · Kerala, India</span>
+  </footer>
+
+</body>
+</html>

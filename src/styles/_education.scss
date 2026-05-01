@@ -1,0 +1,91 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// EDUCATION SECTION
+// ─────────────────────────────────────────────────────────
+
+#education {
+  padding: t.$sp-30 t.$sp-15;
+  background: var(--bg2) !important;
+
+  @include t.lg {
+    padding: t.$sp-20 t.$sp-6;
+  }
+
+  @include t.sm {
+    padding: t.$sp-20 t.$sp-4;
+  }
+
+  .edu-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
+    .section-label {
+      font-family: t.$font-mono;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: t.$sp-5;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+    }
+  }
+
+  .edu-card {
+    margin-top: t.$sp-15;
+    padding: t.$sp-14;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: t.$radius-xl;
+    position: relative;
+    overflow: hidden;
+
+    @include t.sm {
+      padding: t.$sp-8;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(0, 200, 200, 0.06) 0%, transparent 60%);
+
+      html.light & {
+        background: radial-gradient(circle at 50% 0%, rgba(0, 150, 180, 0.07) 0%, transparent 60%);
+      }
+    }
+
+    .edu-degree {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      margin-bottom: t.$sp-3;
+      letter-spacing: -0.5px;
+      position: relative; // above ::before
+    }
+
+    .edu-school {
+      font-size: 16px;
+      color: var(--accent);
+      font-family: t.$font-mono;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: t.$sp-2;
+      position: relative;
+    }
+
+    .edu-year {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: t.$font-mono;
+      letter-spacing: 2px;
+      position: relative;
+    }
+  }
+}

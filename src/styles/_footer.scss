@@ -1,0 +1,26 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// FOOTER
+// ─────────────────────────────────────────────────────────
+
+footer {
+  padding: t.$sp-8 t.$sp-15;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: t.$font-mono;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: t.$z-content;
+
+  @include t.lg {
+    flex-direction: column;
+    gap: t.$sp-3;
+    text-align: center;
+    padding: t.$sp-6;
+  }
+}

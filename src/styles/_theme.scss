@@ -1,0 +1,70 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// THEME TOKENS — CSS Custom Properties
+// Dark mode is the default. Light overrides on html.light.
+// All components consume var(--*) only — never raw hex.
+// ─────────────────────────────────────────────────────────
+
+:root {
+  // Backgrounds
+  --bg:      #050810;
+  --bg2:     #080d1a;
+
+  // Surfaces (cards, nav, modals)
+  --surface:  #0d1424;
+  --surface2: #111a2e;
+
+  // Brand accent colors
+  --accent:  oklch(72% 0.22 195);   // cyan
+  --accent2: oklch(72% 0.22 270);   // purple
+  --accent3: oklch(72% 0.22 320);   // pink
+
+  // Text
+  --text:  #e8edf8;
+  --muted: #5a6680;
+
+  // Borders
+  --border: rgba(100, 150, 255, 0.08);
+
+  // Particle canvas (read by JS modules)
+  --particle-line-rgb:   0, 200, 220;
+  --particle-mouse-rgb:  0, 220, 200;
+  --particle-lightness:  70%;
+  --particle-line-alpha: 0.15;
+  --particle-mouse-alpha: 0.4;
+
+  // Smooth cross-fade when theme switches
+  color-scheme: dark;
+}
+
+html.light {
+  // Backgrounds
+  --bg:      #f0f4ff;
+  --bg2:     #e6ecf8;
+
+  // Surfaces
+  --surface:  #ffffff;
+  --surface2: #f4f7fe;
+
+  // Brand accent colors (slightly darker for contrast on light)
+  --accent:  oklch(52% 0.22 195);
+  --accent2: oklch(52% 0.22 270);
+  --accent3: oklch(52% 0.22 320);
+
+  // Text
+  --text:  #0d1424;
+  --muted: #7a8aaa;
+
+  // Borders
+  --border: rgba(60, 100, 200, 0.1);
+
+  // Particle canvas
+  --particle-line-rgb:    0, 130, 160;
+  --particle-mouse-rgb:   0, 140, 170;
+  --particle-lightness:   40%;
+  --particle-line-alpha:  0.2;
+  --particle-mouse-alpha: 0.35;
+
+  color-scheme: light;
+}

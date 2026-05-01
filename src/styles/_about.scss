@@ -1,0 +1,205 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// ABOUT SECTION
+// ─────────────────────────────────────────────────────────
+
+#about {
+  padding: t.$sp-30 t.$sp-15;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+
+  @include t.lg {
+    grid-template-columns: 1fr;
+    gap: t.$sp-16;
+    padding: t.$sp-20 t.$sp-6;
+  }
+
+  @include t.sm {
+    padding: t.$sp-20 t.$sp-4;
+  }
+
+  .section-label {
+    font-family: t.$font-mono;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: t.$sp-5;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: t.$sp-7;
+  }
+
+  .about-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #8899bb;
+    margin-bottom: t.$sp-5;
+
+    html.light & {
+      color: #5a6a8a;
+    }
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: t.$sp-6;
+    margin-top: t.$sp-10;
+
+    @include t.sm {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stat-card {
+    padding: t.$sp-6;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: t.$radius-md;
+    position: relative;
+    overflow: hidden;
+    transition: border-color t.$ease-base, transform t.$ease-base;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    &:hover {
+      border-color: rgba(100, 200, 220, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .stat-num {
+      font-size: 40px;
+      font-weight: 700;
+      font-family: t.$font-mono;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      margin-top: t.$sp-1;
+    }
+  }
+
+  // ── Orbital animation ────────────────────────────────
+  .about-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include t.lg {
+      display: none; // Hidden on mobile to keep layout clean
+    }
+  }
+
+  .orbit-container {
+    width: 320px;
+    height: 320px;
+    position: relative;
+  }
+
+  .orbit-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    border-radius: t.$radius-circle;
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 0 40px rgba(0, 230, 200, 0.3);
+    z-index: 2;
+
+    html.light & {
+      box-shadow: 0 0 40px rgba(0, 150, 180, 0.2);
+    }
+  }
+
+  .orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: t.$radius-circle;
+    border: 1px solid var(--border);
+    transform: translate(-50%, -50%);
+
+    &:nth-child(2) { // first ring (after center)
+      width: 160px;
+      height: 160px;
+      animation: rotate 8s linear infinite;
+      border-color: rgba(0, 230, 200, 0.2);
+    }
+
+    &:nth-child(3) {
+      width: 240px;
+      height: 240px;
+      animation: rotate 12s linear infinite reverse;
+      border-color: rgba(100, 100, 255, 0.15);
+    }
+
+    &:nth-child(4) {
+      width: 320px;
+      height: 320px;
+      animation: rotate 18s linear infinite;
+      border-color: rgba(200, 100, 255, 0.1);
+    }
+  }
+
+  .orbit-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: t.$radius-circle;
+    background: var(--accent);
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 12px var(--accent);
+
+    &.orbit-dot-2 {
+      background: var(--accent2);
+      box-shadow: 0 0 12px var(--accent2);
+      top: 50%;
+      left: -5px;
+      transform: translateY(-50%);
+    }
+
+    &.orbit-dot-3 {
+      background: var(--accent3);
+      box-shadow: 0 0 12px var(--accent3);
+      bottom: -5px;
+      top: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// CUSTOM CURSOR
+// Hidden on coarse-pointer (touch) devices.
+// ─────────────────────────────────────────────────────────
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: t.$z-cursor;
+  pointer-events: none;
+  mix-blend-mode: screen;
+
+  html.light & {
+    mix-blend-mode: multiply;
+  }
+
+  // Hide on touch / coarse-pointer devices
+  @include t.coarse {
+    display: none;
+  }
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: t.$radius-circle;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s;
+}
+
+.cursor-ring {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--accent);
+  border-radius: t.$radius-circle;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  opacity: 0.5;
+
+  body.hovering & {
+    width: 56px;
+    height: 56px;
+    opacity: 0.9;
+  }
+}

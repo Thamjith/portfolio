@@ -1,0 +1,23 @@
+// ─────────────────────────────────────────────────────────
+// MAIN SCSS ENTRY
+// Import order matters: tokens/theme first, then utilities,
+// then components.
+// ─────────────────────────────────────────────────────────
+
+@use 'tokens';          // SCSS variables & mixins
+@use 'theme';           // CSS custom property definitions
+
+@use 'reset';           // Box-sizing, base HTML/body, noise overlay
+@use 'accessibility';   // Skip link, :focus-visible, reduced-motion
+
+@use 'animations';      // @keyframes + reveal + glitch utilities
+@use 'cursor';          // #cursor, .cursor-dot, .cursor-ring
+
+@use 'nav';             // Primary nav + mobile menu + hamburger
+@use 'hero';            // #hero section
+@use 'about';           // #about section
+@use 'skills';          // #skills section
+@use 'experience';      // #experience section
+@use 'education';       // #education section
+@use 'contact';         // #contact section
+@use 'footer';          // <footer>

@@ -1,0 +1,104 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// ACCESSIBILITY
+// Skip link, focus styles, reduced-motion overrides.
+// ─────────────────────────────────────────────────────────
+
+// ── Skip-to-content link ─────────────────────────────────
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: t.$sp-4;
+  padding: t.$sp-3 t.$sp-6;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: t.$font-mono;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: t.$radius-md;
+  z-index: t.$z-noise + 1;
+  transition: top t.$ease-fast;
+
+  &:focus {
+    top: t.$sp-4;
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+// ── Global focus-visible ring ────────────────────────────
+// Applied to all interactive elements via keyboard navigation.
+// Mouse users get no outline (cursor provides feedback).
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: t.$radius-sm;
+}
+
+// ── Reduced motion ───────────────────────────────────────
+// One authoritative block — zero all animation/transitions
+// then restore static final states so content is visible.
+@include t.no-motion {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  // Hero entrance: skip to final visible state
+  .hero-eyebrow,
+  .hero-name .line1,
+  .hero-name .line2,
+  .hero-title,
+  .hero-cta,
+  .scroll-indicator {
+    opacity: 1;
+    transform: none;
+  }
+
+  // Scroll-reveal: show everything immediately
+  .reveal,
+  .timeline-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  // Skill tags: show immediately
+  .skill-tag {
+    opacity: 1 !important;
+    transform: none !important;
+    transition-delay: 0s !important;
+  }
+
+  // Orbit rings: stop rotating
+  .orbit-ring {
+    animation: none;
+  }
+
+  // Timeline dot pulse: stop
+  .timeline-dot::before {
+    animation: none;
+  }
+
+  // Scroll line pulse: stop
+  .scroll-line {
+    animation: none;
+    opacity: 0.5;
+  }
+
+  // Glitch: stop
+  .glitch-wrap::before,
+  .glitch-wrap::after {
+    animation: none;
+    opacity: 0;
+  }
+}

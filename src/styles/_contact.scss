@@ -1,0 +1,127 @@
+@use 'tokens' as t;
+
+// ─────────────────────────────────────────────────────────
+// CONTACT SECTION
+// ─────────────────────────────────────────────────────────
+
+#contact {
+  padding: t.$sp-40 t.$sp-15;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  @include t.lg {
+    padding: t.$sp-30 t.$sp-6;
+  }
+
+  @include t.sm {
+    padding: t.$sp-20 t.$sp-4;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0, 200, 200, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+
+    html.light & {
+      background: radial-gradient(circle, rgba(0, 150, 180, 0.05) 0%, transparent 60%);
+    }
+  }
+
+  .contact-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: t.$z-content;
+
+    .section-label {
+      font-family: t.$font-mono;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: t.$sp-5;
+    }
+  }
+
+  .contact-title {
+    font-size: clamp(36px, 6vw, 80px);
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: t.$sp-7;
+
+    span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .contact-sub {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: t.$sp-13; // ~52px
+
+    @include t.sm {
+      font-size: 15px;
+    }
+  }
+
+  .contact-links {
+    display: flex;
+    gap: t.$sp-4;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: t.$sp-2 + 2px; // 10px
+    padding: t.$sp-4 t.$sp-7;
+    border: 1px solid var(--border);
+    border-radius: t.$radius-md;
+    text-decoration: none;
+    color: var(--text);
+    font-family: t.$font-mono;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: all t.$ease-base;
+    background: var(--surface);
+    cursor: none;
+
+    @include t.coarse {
+      cursor: pointer;
+    }
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(0, 200, 200, 0.05);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 200, 200, 0.12);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+  }
+}
