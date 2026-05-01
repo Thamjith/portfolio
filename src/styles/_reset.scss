@@ -40,6 +40,12 @@ body {
   transition: background t.$ease-slow, color t.$ease-slow;
 }
 
+// Un-hide body once CSS loads (paired with the inline opacity:0 in <head>)
+body {
+  opacity: 1;
+  transition: opacity 0.15s ease, background t.$ease-slow, color t.$ease-slow;
+}
+
 body {
   // Custom cursor — only on fine-pointer (mouse) devices
   cursor: none;

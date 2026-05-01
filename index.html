@@ -6,6 +6,35 @@
   <meta name="description" content="Thamjith Thaha — Senior Software Engineer specialising in TypeScript, React, and enterprise-scale frontend systems." />
   <title>Thamjith Thaha — Senior Software Engineer</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://thamjiththaha.com/" />
+  <meta property="og:title"       content="Thamjith Thaha — Senior Software Engineer" />
+  <meta property="og:description" content="Senior Software Engineer specialising in TypeScript, React, and enterprise-scale frontend systems." />
+  <meta property="og:image"       content="https://thamjiththaha.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Thamjith Thaha — Senior Software Engineer" />
+  <meta name="twitter:description" content="Senior Software Engineer specialising in TypeScript, React, and enterprise-scale frontend systems." />
+  <meta name="twitter:image"       content="https://thamjiththaha.com/og-image.png" />
+
+  <!-- Prevent FOUC: hide body until CSS is injected -->
+  <style>body { opacity: 0; }</style>
+
+  <!-- Pre-apply theme class before first paint to prevent flash -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var mode  = ['dark', 'light', 'auto'].includes(saved) ? saved : 'light';
+      var light = mode === 'light' || (mode === 'auto' && !window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (light) document.documentElement.classList.add('light');
+    }());
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -38,15 +67,15 @@
     </ul>
 
     <div class="nav-controls">
-      <!-- Theme toggle -->
+      <!-- Theme toggle (cycles: dark → light → auto) -->
       <button
         class="theme-toggle"
         id="themeToggle"
-        aria-label="Switch to light mode"
-        aria-pressed="false"
+        aria-label="Switch to auto (system) mode"
+        data-mode="light"
         type="button"
       >
-        <!-- Sun -->
+        <!-- Sun (light mode) -->
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="4"></circle>
           <line x1="12" y1="2"     x2="12" y2="4"></line>
@@ -58,9 +87,15 @@
           <line x1="4.22" y1="19.78"  x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"></line>
         </svg>
-        <!-- Moon -->
+        <!-- Moon (dark mode) -->
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <!-- Monitor (auto / system mode) -->
+        <svg class="icon-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
         </svg>
       </button>
 

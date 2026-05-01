@@ -135,24 +135,21 @@ nav {
       outline-offset: 3px;
     }
 
-    // Sun & moon icons (positioned absolutely, animated in/out)
+    // Icons: all hidden by default, shown per data-mode
     .icon-sun,
-    .icon-moon {
+    .icon-moon,
+    .icon-auto {
       position: absolute;
       width: 18px;
       height: 18px;
       transition: transform t.$ease-spring, opacity t.$ease-slow;
+      transform: rotate(-90deg) scale(0);
+      opacity: 0;
     }
 
-    html:not(.light) & {
-      .icon-sun  { transform: rotate(-90deg) scale(0); opacity: 0; }
-      .icon-moon { transform: rotate(0deg) scale(1);   opacity: 1; }
-    }
-
-    html.light & {
-      .icon-sun  { transform: rotate(0deg) scale(1);   opacity: 1; }
-      .icon-moon { transform: rotate(90deg) scale(0);  opacity: 0; }
-    }
+    &[data-mode='dark']  .icon-moon { transform: rotate(0deg) scale(1); opacity: 1; }
+    &[data-mode='light'] .icon-sun  { transform: rotate(0deg) scale(1); opacity: 1; }
+    &[data-mode='auto']  .icon-auto { transform: rotate(0deg) scale(1); opacity: 1; }
   }
 
   // ── Hamburger (mobile only) ────────────────────────────
