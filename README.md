@@ -1,5 +1,17 @@
 # portfolio
 
+Live site: **[thamjiththaha.com](https://thamjiththaha.com)**
+
+Open it in a **browser** for the full interactive portfolio. With **`curl`**, nginx serves the **terminal-style plain-text resume** (CLI user agents). Follow redirects if HTTP sends you to HTTPS:
+
+```bash
+curl -L https://thamjiththaha.com
+```
+
+| Browser | Terminal-style output (`curl`) |
+| --- | --- |
+| ![Portfolio homepage in a browser](docs/readme/browser.png) | ![Terminal-style resume via curl](docs/readme/terminal.png) |
+
 ## Before GitHub Actions
 
 The workflow (`.github/workflows/build.yml`) runs on **pushes and pull requests** against `main`: it checks out the repo, runs `npm ci`, and `npm run build`. **Deploy to EC2 runs only on pushes to `main`** (after a successful build). Pull requests never deploy.
