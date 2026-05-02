@@ -62,6 +62,18 @@ jobs:
           EC2_SSH_PORT: ${{ secrets.EC2_SSH_PORT }}
         run: |
           set -euo pipefail
+          EC2_DEPLOY_PATH="$(printf '%s' "$EC2_DEPLOY_PATH" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+          if [ -z "$EC2_DEPLOY_PATH" ]; then
+            echo "::error::EC2_DEPLOY_PATH is empty. Without it, rsync targets / and fails with Receiver mkdir Permission denied."
+            exit 1
+          fi
+          case "$EC2_DEPLOY_PATH" in
+            /*) ;;
+            *)
+              echo "::error::EC2_DEPLOY_PATH must be an absolute path (e.g. /var/www/thamjiththaha.com), not a relative path."
+              exit 1
+              ;;
+          esac
           PORT="${EC2_SSH_PORT:-22}"
           DEST="${EC2_DEPLOY_PATH%/}/"
           rsync -avz --delete -e "ssh -p ${PORT}" dist/ "${EC2_USER}@${EC2_HOST}:${DEST}"
