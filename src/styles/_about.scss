@@ -68,7 +68,8 @@
     border: 1px solid var(--border);
     border-radius: t.$radius-md;
     position: relative;
-    overflow: hidden;
+    min-width: 0;
+    overflow: visible;
     transition: border-color t.$ease-base, transform t.$ease-base;
 
     &::before {
@@ -94,6 +95,9 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      line-height: 1.15;
     }
 
     .stat-label {
@@ -101,6 +105,7 @@
       color: var(--muted);
       letter-spacing: 1px;
       margin-top: t.$sp-1;
+      overflow-wrap: break-word;
     }
   }
 
