@@ -17,6 +17,7 @@ import { initReveal }      from './modules/reveal.js';
 import { initTilt }        from './modules/tilt.js';
 import { initSkillStagger } from './modules/skillStagger.js';
 import { initExpDurationHover } from './modules/expDurationHover.js';
+import { initConsoleEasterEgg } from './modules/consoleEasterEgg.js';
 
 /** First role started Feb 2020. Whole months elapsed; if remainder > 6 months, count rounds up. */
 function experienceYearCount(now = new Date()) {
@@ -63,3 +64,5 @@ initReveal();
 initTilt();
 initSkillStagger();
 initExpDurationHover();
+
+initConsoleEasterEgg();
