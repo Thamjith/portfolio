@@ -5,9 +5,11 @@
 // ─────────────────────────────────────────────────────────
 
 export function initNav() {
-  const nav        = document.getElementById('nav');
-  const hamburger  = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const nav         = document.getElementById('nav');
+  const hamburger   = document.getElementById('hamburger');
+  const mobileMenu  = document.getElementById('mobile-menu');
+  const mainContent = document.getElementById('main-content');
+  const footer      = document.querySelector('footer[role="contentinfo"]');
   const mobileLinks = mobileMenu.querySelectorAll('a');
 
   // ── Scroll → frosted-glass ─────────────────────────────
@@ -22,7 +24,9 @@ export function initNav() {
     hamburger.setAttribute('aria-expanded', 'true');
     hamburger.setAttribute('aria-label', 'Close menu');
     document.body.style.overflow = 'hidden';
-    // Move focus to first link
+    // Keep keyboard / AT out of page content behind the overlay (native inert).
+    if (mainContent) mainContent.inert = true;
+    if (footer) footer.inert = true;
     mobileLinks[0]?.focus();
   }
 
@@ -32,6 +36,8 @@ export function initNav() {
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.setAttribute('aria-label', 'Open menu');
     document.body.style.overflow = '';
+    if (mainContent) mainContent.inert = false;
+    if (footer) footer.inert = false;
     hamburger.focus();
   }
 
