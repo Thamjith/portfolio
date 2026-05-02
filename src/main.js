@@ -5,8 +5,6 @@
 // ─────────────────────────────────────────────────────────
 
 import './styles/main.scss';
-import { inject } from '@vercel/analytics';
-import { injectSpeedInsights } from '@vercel/speed-insights';
 
 import { initTheme }       from './modules/theme.js';
 import { initCursor }      from './modules/cursor.js';
@@ -43,12 +41,6 @@ if (statExp) {
 }
 const aboutExp = document.getElementById('about-exp-years');
 if (aboutExp) aboutExp.textContent = `${expYears}+`;
-
-// Enable Vercel Analytics only for production builds.
-if (import.meta.env.PROD) {
-  inject();
-  injectSpeedInsights();
-}
 
 // Theme must initialise first (sets html.light before paint)
 initTheme();
