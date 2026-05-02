@@ -46,8 +46,10 @@ sudo certbot --nginx -d thamjiththaha.com -d www.thamjiththaha.com
 
 ### After `setup/nginx.conf` changes
 
-Re-sync from **`main`** and reload:
+Fetch **`main`**’s [`setup/nginx.conf`](setup/nginx.conf) and reload nginx:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Thamjith/portfolio/refs/heads/main/setup/sync-nginx-site.sh | sudo bash
+sudo curl -fsSL https://raw.githubusercontent.com/Thamjith/portfolio/refs/heads/main/setup/nginx.conf \
+  -o /etc/nginx/sites-available/thamjiththaha.com
+sudo nginx -t && sudo systemctl reload nginx
 ```
