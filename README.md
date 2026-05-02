@@ -1,16 +1,16 @@
-# portfolio
+<img width="1710" height="1067" alt="Screenshot 2026-05-02 at 3 23 10 PM" src="https://github.com/user-attachments/assets/6f5b5b43-d051-4080-95b2-14b8f30e17bb" /># portfolio
 
 Live site: **[thamjiththaha.com](https://thamjiththaha.com)**
 
 Open it in a **browser** for the full interactive portfolio. With **`curl`**, nginx serves the **terminal-style plain-text resume** (CLI user agents). Follow redirects if HTTP sends you to HTTPS:
 
 ```bash
-curl -L https://thamjiththaha.com
+curl https://thamjiththaha.com
 ```
 
 | Browser | Terminal-style output (`curl`) |
 | --- | --- |
-| ![Portfolio homepage in a browser](docs/readme/browser.png) | ![Terminal-style resume via curl](docs/readme/terminal.png) |
+| <img width="1710" height="1067" alt="Screenshot 2026-05-02 at 3 23 10 PM" src="https://github.com/user-attachments/assets/fa01c7f6-0c06-46bd-bd87-a6b2dfc97df0" /> | <img width="1177" height="949" alt="Screenshot 2026-05-02 at 3 22 54 PM" src="https://github.com/user-attachments/assets/080780a8-1b3f-4974-8134-092936563aa1" /> |
 
 ## Before GitHub Actions
 
