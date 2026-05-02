@@ -47,7 +47,9 @@ If the folder already existed with other ownership (e.g. `root` or `www-data`), 
 
 ### 2. Configure nginx
 
-The checked-in `setup/nginx.conf` is **HTTP-only** (port 80) so `nginx -t` succeeds before certificates exist. After **step 3**, Certbot adds TLS (`ssl_certificate`, recommended SSL includes, and usually HTTPS redirect). Do not overwrite `/etc/nginx/sites-available/thamjiththaha.com` from this repo after Certbot unless you merge TLS blocks back in or run Certbot again.
+See [`setup/nginx.conf`](setup/nginx.conf): the comment block at the top describes Certbot-first TLS and warns against overwriting `/etc/nginx/sites-available/thamjiththaha.com` without merging.
+
+The checked-in `setup/nginx.conf` defines matching **HTTP (80)** and **HTTPS (443)** blocks—complete **step 3** before `nginx -t` so Let’s Encrypt files exist (or omit or comment out the `:443` server until then). Certbot may still adjust redirects or snippets; do not overwrite `/etc/nginx/sites-available/thamjiththaha.com` from this repo after Certbot unless you merge TLS-related edits back in or run Certbot again.
 
 ```bash
 sudo apt update && sudo apt install -y curl
@@ -125,7 +127,7 @@ If you add **extensionless** files under `public/` later, extend that regex `loc
 
 ### 6. Updating nginx config later
 
-If you already ran Certbot, the live file contains TLS settings Certbot added. Fetching this repo’s HTTP-only template **overwrites** those lines—either edit the server file manually to preserve HTTPS blocks or run `sudo certbot --nginx` again after replacing content. **Certificate-managed setups often duplicate logic on `:80` and `:443`; merge the static-extension `location` block into both server blocks if yours is split that way.**
+If you already ran Certbot, the live file may contain TLS tweaks Certbot added beyond this repo’s template. Fetching [`setup/nginx.conf`](setup/nginx.conf) **overwrites** those differences—either merge manually or run `sudo certbot --nginx` again after replacing content. **Certificate-managed setups often duplicate logic on `:80` and `:443`; merge the static-extension `location` block into both server blocks if yours is split that way.**
 
 ```bash
 sudo apt install -y curl
