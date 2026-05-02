@@ -15,8 +15,8 @@ sudo chown ubuntu:ubuntu /var/www/thamjiththaha.com
 
 ### 2. Configure nginx
 ```bash
-# Copy nginx config from repo
-sudo cp setup/nginx.conf /etc/nginx/sites-available/thamjiththaha.com
+sudo apt update && sudo apt install -y curl
+sudo curl -fsSL https://raw.githubusercontent.com/Thamjith/portfolio/refs/heads/main/setup/nginx.conf -o /etc/nginx/sites-available/thamjiththaha.com
 
 # Enable the site
 sudo ln -s /etc/nginx/sites-available/thamjiththaha.com /etc/nginx/sites-enabled/thamjiththaha.com
@@ -47,8 +47,8 @@ Add these in **Settings → Secrets and variables → Actions**:
 | `EC2_SSH_PORT` | `22` |
 
 ### 6. Updating nginx config later
-If `setup/nginx.conf` is ever changed, re-apply it on the server:
 ```bash
-sudo cp setup/nginx.conf /etc/nginx/sites-available/thamjiththaha.com
+sudo apt install -y curl
+sudo curl -fsSL https://raw.githubusercontent.com/Thamjith/portfolio/refs/heads/main/setup/nginx.conf -o /etc/nginx/sites-available/thamjiththaha.com
 sudo nginx -t && sudo systemctl reload nginx
 ```
