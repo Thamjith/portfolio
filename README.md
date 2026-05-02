@@ -112,9 +112,20 @@ sudo chmod -R u+rwX /var/www/thamjiththaha.com
 
 Ensure the SSH private key is for the **`ubuntu`** account, not `root`.
 
+### Static URL shows the homepage / `text/html`
+
+`setup/nginx.conf` matches common **static extensions** (everything Vite emits from `public/` plus `/assets/*.js|css`, images, fonts, etc.) and uses **`try_files $uri =404`** so those paths never fall through to the SPA `index.html`. If you still see HTML for a file URL:
+
+1. **On the server**, confirm the file exists after deploy (paths mirror `public/` at the site root): e.g. `ls -la /var/www/thamjiththaha.com/resume/` and `ls /var/www/thamjiththaha.com/*.svg`.
+2. **Redeploy** (push to `main`) so `dist/` matches git—files under `public/` are copied into `dist/` by `vite build`.
+3. **Reload nginx** after updating the config on the server (duplicate static-extension `location` into both `:80` and `:443` blocks if Certbot split them).
+4. **Cloudflare / CDN:** Purge the affected URL (or prefix) after fixing the origin—stale cached HTML for an asset URL is common.
+
+If you add **extensionless** files under `public/` later, extend that regex `location` or add a dedicated prefix `location`.
+
 ### 6. Updating nginx config later
 
-If you already ran Certbot, the live file contains TLS settings Certbot added. Fetching this repo’s HTTP-only template **overwrites** those lines—either edit the server file manually to preserve HTTPS blocks or run `sudo certbot --nginx` again after replacing content.
+If you already ran Certbot, the live file contains TLS settings Certbot added. Fetching this repo’s HTTP-only template **overwrites** those lines—either edit the server file manually to preserve HTTPS blocks or run `sudo certbot --nginx` again after replacing content. **Certificate-managed setups often duplicate logic on `:80` and `:443`; merge the static-extension `location` block into both server blocks if yours is split that way.**
 
 ```bash
 sudo apt install -y curl
