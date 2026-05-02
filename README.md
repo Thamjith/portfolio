@@ -6,6 +6,7 @@
 - Ubuntu server with nginx installed
 - Domain DNS A records pointing to `18.210.59.148`
 - Certbot installed: `sudo apt install certbot python3-certbot-nginx`
+- **Deploy target directory:** GitHub Actions rsync needs `EC2_DEPLOY_PATH` to exist and be writable by `EC2_USER`; otherwise deploy fails. **§1 Create web root** does exactly that—run it once on the server before the first deploy to `main`.
 
 ### 1. Create web root
 ```bash
