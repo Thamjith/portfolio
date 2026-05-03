@@ -47,31 +47,43 @@
   .project-card {
     padding: t.$sp-14;
     background: var(--surface);
-    border: 1px solid var(--border);
     border-radius: t.$radius-xl;
     position: relative;
     overflow: hidden;
-    transition: border-color t.$ease-base, transform t.$ease-base;
+    transition: transform t.$ease-base, box-shadow t.$ease-base;
 
     @include t.sm {
       padding: t.$sp-8;
     }
 
     &:hover {
-      border-color: var(--accent);
       transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 200, 200, 0.15);
+
+      &::after {
+        opacity: 1;
+      }
     }
 
     &::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 100% 0%, rgba(0, 200, 200, 0.07) 0%, transparent 60%);
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
       pointer-events: none;
+    }
 
-      html.light & {
-        background: radial-gradient(circle at 100% 0%, rgba(0, 150, 180, 0.08) 0%, transparent 60%);
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 230, 200, 0.08), rgba(100, 100, 255, 0.08));
+      opacity: 0;
+      transition: opacity t.$ease-base;
+      pointer-events: none;
     }
   }
 
