@@ -119,10 +119,11 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--accent);
     border-radius: t.$radius-xl;
-    color: var(--muted);
-    transition: color t.$ease-base, border-color t.$ease-base, background t.$ease-base;
+    color: var(--accent);
+    background: rgba(0, 200, 200, 0.06);
+    transition: color t.$ease-base, border-color t.$ease-base, background t.$ease-base, transform t.$ease-base;
 
     svg {
       width: 16px;
@@ -130,9 +131,8 @@
     }
 
     &:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      background: rgba(0, 200, 200, 0.06);
+      background: rgba(0, 200, 200, 0.15);
+      transform: scale(1.1);
     }
   }
 
