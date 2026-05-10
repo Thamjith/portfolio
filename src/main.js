@@ -6,6 +6,9 @@
 
 import './styles/main.scss';
 
+import { inject } from '@vercel/analytics';
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
 import { initTheme }       from './modules/theme.js';
 import { initCursor }      from './modules/cursor.js';
 import { initParticles }   from './modules/particles.js';
@@ -58,3 +61,6 @@ initSkillStagger();
 initExpDurationHover();
 
 initConsoleEasterEgg();
+
+inject();
+injectSpeedInsights();
