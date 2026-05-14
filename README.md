@@ -1,16 +1,45 @@
-# portfolio
+thamjiththaha@portfolio: ~                                    zsh · utf-8 · 256color
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Live: **[thamjiththaha.com](https://thamjiththaha.com)** — open in a browser for the SPA; use **`curl https://thamjiththaha.com`** for the plain-text terminal resume (CLI user agents).
+   _____  _                   _  _  _    _    
+  |_   _|| |_   __ _  _ __   (_)(_)| |_ | |_  
+    | |  | ' \ / _` || '  \  | || ||  _|| ' \ 
+    |_|  |_||_|\__,_||_|_|_|_/ ||_| \__||_||_|
+                           |__/                 // Technical Lead
 
-| Browser | `curl` |
-| --- | --- |
-| ![Browser](https://github.com/user-attachments/assets/fa01c7f6-0c06-46bd-bd87-a6b2dfc97df0) | ![curl](https://github.com/user-attachments/assets/080780a8-1b3f-4974-8134-092936563aa1) |
-
-## Local development
-
-```bash
-npm ci
-npm run dev
-```
-
-Production build: **`npm run build`** (output in **`dist/`**). The site is deployed on **Vercel** from this repository.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                    │
+## status                           │  thamjith@portfolio:~$ whoami --verbose
+● Available for                     │
+  opportunities                     │  name          Thamjith Thaha
+  Kerala, India ·                   │  title         Technical Lead @ IBM
+  IBM Kochi                         │  focus         Frontend Engineering · Observability · Product-Led Growth
+                                    │  description   5 yrs crafting scalable, performant systems. Clean
+## contact                          │                 architecture. Meaningful user experiences.
+email  → jithuthaha8@gmail.com      │
+linked → thamjith-thaha             │  ─────────────────────────────────────────────────────────────────────────────────────
+resume → /resume/thamjiththaha.pdf  │  thamjith@portfolio:~$ cat experience.log
+github → github.com/Thamjith        │
+                                    │  ┌─ IBM ──────────────────────────────────────────────────────────────────────────────
+## stack                            │  └─◆ Technical Lead          Mar 2026 → Present
+[TypeScript] [React]                │  └─◆ Sr. Software Eng.       Aug 2023 → Mar 2026
+[Java] [Spring Boot]                │
+[Node.js] [MySQL]                   │  ┌─ InApp ────────────────────────────────────────────────────────────────────────────
+[REST] [Git]                        │  └─◆ Sr. Software Eng.       Jan 2023 → Aug 2023
+                                    │  └─◆ Software Eng.           Mar 2022 → Jan 2023
+                                    │
+                                    │  ┌─ Vanilla Networks ─────────────────────────────────────────────────────────────────
+                                    │  └─◆ Software Eng.           Feb 2020 → Mar 2022
+                                    │
+                                    │  ─────────────────────────────────────────────────────────────────────────────────────
+                                    │
+                                    │  thamjith@portfolio:~$ grep --highlight achievements.txt
+                                    │
+                                    │  [+40%]  Faster onboarding flows for Instana users
+                                    │  [-20%]  Cost reduction via 3PL logistics optimization
+                                    │  [IBM]   Carbon Design System · Share & Invite features
+                                    │  [edu]   BCA · University of Kerala · 2016–2019
+                                    │
+                                    │  thamjith@portfolio:~$ _
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+● NORMAL  thamjiththaha.com                                                                      Kerala, India | UTF-8
