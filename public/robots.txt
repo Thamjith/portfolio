@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thamjiththaha.com/sitemap.xml
+Sitemap: https://www.thamjiththaha.com/sitemap.xml
