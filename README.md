@@ -1,45 +1,59 @@
-thamjiththaha@portfolio: ~                                    zsh · utf-8 · 256color
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Portfolio — Thamjith Thaha
 
-   _____  _                   _  _  _    _    
-  |_   _|| |_   __ _  _ __   (_)(_)| |_ | |_  
-    | |  | ' \ / _` || '  \  | || ||  _|| ' \ 
-    |_|  |_||_|\__,_||_|_|_|_/ ||_| \__||_||_|
-                           |__/                 // Technical Lead
+Personal portfolio site for **Thamjith Thaha**, Technical Lead at IBM Instana (Kochi, Kerala). The live site is at [https://www.thamjiththaha.com/](https://www.thamjiththaha.com/).
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                                    │
-## status                           │  thamjith@portfolio:~$ whoami --verbose
-● Available for                     │
-  opportunities                     │  name          Thamjith Thaha
-  Kerala, India ·                   │  title         Technical Lead @ IBM
-  IBM Kochi                         │  focus         Frontend Engineering · Observability · Product-Led Growth
-                                    │  description   5 yrs crafting scalable, performant systems. Clean
-## contact                          │                 architecture. Meaningful user experiences.
-email  → jithuthaha8@gmail.com      │
-linked → thamjith-thaha             │  ─────────────────────────────────────────────────────────────────────────────────────
-resume → /resume/thamjiththaha.pdf  │  thamjith@portfolio:~$ cat experience.log
-github → github.com/Thamjith        │
-                                    │  ┌─ IBM ──────────────────────────────────────────────────────────────────────────────
-## stack                            │  └─◆ Technical Lead          Mar 2026 → Present
-[TypeScript] [React]                │  └─◆ Sr. Software Eng.       Aug 2023 → Mar 2026
-[Java] [Spring Boot]                │
-[Node.js] [MySQL]                   │  ┌─ InApp ────────────────────────────────────────────────────────────────────────────
-[REST] [Git]                        │  └─◆ Sr. Software Eng.       Jan 2023 → Aug 2023
-                                    │  └─◆ Software Eng.           Mar 2022 → Jan 2023
-                                    │
-                                    │  ┌─ Vanilla Networks ─────────────────────────────────────────────────────────────────
-                                    │  └─◆ Software Eng.           Feb 2020 → Mar 2022
-                                    │
-                                    │  ─────────────────────────────────────────────────────────────────────────────────────
-                                    │
-                                    │  thamjith@portfolio:~$ grep --highlight achievements.txt
-                                    │
-                                    │  [+40%]  Faster onboarding flows for Instana users
-                                    │  [-20%]  Cost reduction via 3PL logistics optimization
-                                    │  [IBM]   Carbon Design System · Share & Invite features
-                                    │  [edu]   BCA · University of Kerala · 2016–2019
-                                    │
-                                    │  thamjith@portfolio:~$ _
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-● NORMAL  thamjiththaha.com                                                                      Kerala, India | UTF-8
+## About the site
+
+Single-page portfolio with:
+
+- **Hero** — Name, role, rotating typewriter titles, CTAs  
+- **About** — Bio, dynamic years of experience (from Feb 2020), stats  
+- **Skills** — Languages, frameworks, data, and tools  
+- **Experience** — IBM, InApp, Vanilla Networks (timeline with role details)  
+- **Education** — BCA, University of Kerala (2016–2019)  
+- **Projects** — Featured work (e.g. [HangPlan](https://hangplan.in))  
+- **Contact** — Email, LinkedIn, Instagram, resume PDF  
+
+UX and polish include dark / light / system theme, skip link, scroll reveals, background particles, optional custom cursor (fine pointer only), mobile nav, and structured data (JSON-LD) plus Open Graph / Twitter meta for sharing.
+
+## Tech stack
+
+| Area        | Choice                                      |
+| ----------- | ------------------------------------------- |
+| Build       | [Vite](https://vitejs.dev/) 6               |
+| Markup      | Static `index.html`                         |
+| Scripts     | Vanilla ES modules (`src/main.js`, `src/modules/`) |
+| Styles      | [Sass](https://sass-lang.com/) (`src/styles/`) |
+| Analytics   | [@vercel/analytics](https://vercel.com/docs/analytics), [@vercel/speed-insights](https://vercel.com/docs/speed-insights) |
+
+## Local development
+
+Requirements: **Node.js** (LTS recommended).
+
+```bash
+npm install
+npm run dev
+```
+
+Open the URL Vite prints (usually `http://localhost:5173`).
+
+## Build and preview
+
+```bash
+npm run build
+npm run preview
+```
+
+`npm run build` outputs a static site to `dist/`, suitable for any static host (e.g. Vercel, Netlify, GitHub Pages).
+
+## Repository layout
+
+- `index.html` — Page structure, SEO, and content sections  
+- `src/main.js` — Entry: theme, effects, analytics, experience-year helper  
+- `src/modules/` — Feature modules (theme, nav, typewriter, particles, etc.)  
+- `src/styles/` — Global SCSS  
+- `public/` — Static assets (images, resume PDF, favicon, verification files, etc.)
+
+## License and reuse
+
+This repository is a personal portfolio. If you fork or reuse layout or copy, adapt branding and content for your own use.
