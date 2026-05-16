@@ -49,11 +49,4 @@ export function initConsoleEasterEgg() {
   const curlHintCmd =
     'color: #aaff00; font-family: ui-monospace, monospace; font-weight: bold; background: #151520; padding: 4px 8px; border-radius: 4px';
   const curlHintTail = 'color: #00ffee; font-style: italic';
-  console.log(
-    "%cHi — do you know what's amazing?\n%cOpen a terminal and run:\n%ccurl thamjiththaha.com%c\nSee what happens.",
-    curlHintLead,
-    curlHintBody,
-    curlHintCmd,
-    curlHintTail
-  );
 }
