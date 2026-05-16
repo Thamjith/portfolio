@@ -55,6 +55,7 @@
 
   .projects-carousel__track {
     display: flex;
+    align-items: stretch;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -67,6 +68,7 @@
   }
 
   .projects-carousel__slide {
+    display: flex;
     flex: 0 0 100%;
     min-width: 0;
     padding: 0 t.$sp-1;
@@ -179,6 +181,11 @@
   }
 
   .project-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    min-height: 100%;
     padding: t.$sp-14;
     background: var(--surface);
     border-radius: t.$radius-xl;
@@ -228,6 +235,8 @@
     gap: t.$sp-4;
     margin-bottom: t.$sp-6;
     position: relative;
+    z-index: t.$z-content;
+    flex-shrink: 0;
   }
 
   .project-name-row {
@@ -308,11 +317,13 @@
   }
 
   .project-desc {
+    flex: 1;
     font-size: 15px;
     color: var(--muted);
     line-height: 1.7;
-    margin-bottom: t.$sp-8;
+    margin: 0;
     position: relative;
+    z-index: t.$z-content;
   }
 
   .project-inline-link {
@@ -332,7 +343,10 @@
     gap: t.$sp-2;
     list-style: none;
     padding: 0;
+    margin-top: t.$sp-8;
     position: relative;
+    z-index: t.$z-content;
+    flex-shrink: 0;
 
     .tech-chip {
       padding: 4px 12px;
