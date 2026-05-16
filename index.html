@@ -638,7 +638,7 @@
 									class="projects-carousel__slide"
 									role="listitem"
 									aria-roledescription="slide"
-									aria-label="1 of 2: HangPlan"
+									aria-label="1 of 3: HangPlan"
 								>
 							<article
 								class="project-card"
@@ -724,7 +724,7 @@
 									class="projects-carousel__slide"
 									role="listitem"
 									aria-roledescription="slide"
-									aria-label="2 of 2: Straum"
+									aria-label="2 of 3: Straum"
 								>
 									<article
 										class="project-card"
@@ -798,6 +798,83 @@
 										</ul>
 									</article>
 								</li>
+								<li
+									class="projects-carousel__slide"
+									role="listitem"
+									aria-roledescription="slide"
+									aria-label="3 of 3: Imacto"
+								>
+									<article
+										class="project-card"
+										aria-label="Imacto, browser media studio, in development"
+									>
+										<div class="project-header">
+											<div>
+												<div class="project-name-row">
+													<h3 class="project-name">Imacto</h3>
+													<span class="project-status">
+														<span
+															class="project-status__dot"
+															aria-hidden="true"
+														></span>
+														In development
+													</span>
+												</div>
+												<p class="project-tagline">
+													Upload. Edit. Export.
+												</p>
+											</div>
+											<a
+												href="https://imacto.thamjiththaha.com/"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="project-link"
+												aria-label="Visit Imacto (opens in new tab)"
+											>
+												<svg
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													aria-hidden="true"
+													focusable="false"
+												>
+													<path
+														d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+													/>
+													<polyline points="15 3 21 3 21 9" />
+													<line x1="10" y1="14" x2="21" y2="3" />
+												</svg>
+												<span class="sr-only">(opens in new tab)</span>
+											</a>
+										</div>
+										<p class="project-desc">
+											A browser-based media studio for editing images in the
+											client: crop, compress, convert formats, rotate, watermark,
+											and more, without sending files to a server. Still in active
+											development. Open source on
+											<a
+												href="https://github.com/Thamjith/Imacto"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="project-inline-link"
+												>GitHub</a
+											>.
+										</p>
+										<ul
+											class="project-tech"
+											aria-label="Technologies used"
+											role="list"
+										>
+											<li class="tech-chip">React</li>
+											<li class="tech-chip">Vite</li>
+											<li class="tech-chip">JavaScript</li>
+											<li class="tech-chip">Canvas API</li>
+										</ul>
+									</article>
+								</li>
 							</ul>
 						</div>
 
@@ -825,7 +902,7 @@
 								<p class="projects-carousel__counter" aria-live="polite">
 									<span class="projects-carousel__counter-current">01</span>
 									<span aria-hidden="true"> / </span>
-									<span class="projects-carousel__counter-total">02</span>
+									<span class="projects-carousel__counter-total">03</span>
 								</p>
 								<div
 									class="projects-carousel__dots"
@@ -844,6 +921,13 @@
 										class="projects-carousel__dot"
 										role="tab"
 										aria-label="Straum"
+										aria-selected="false"
+									></button>
+									<button
+										type="button"
+										class="projects-carousel__dot"
+										role="tab"
+										aria-label="Imacto"
 										aria-selected="false"
 									></button>
 								</div>
