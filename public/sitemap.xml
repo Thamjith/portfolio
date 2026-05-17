@@ -20,6 +20,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.thamjiththaha.com/favicon.ico</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.thamjiththaha.com/llms.txt</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
