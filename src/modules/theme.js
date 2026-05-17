@@ -16,7 +16,10 @@ const NEXT_LABEL = {
   auto:  'Switch to dark mode',
 };
 
+export const THEME_TO_DARK = 'theme:to-dark';
+
 let _mode = 'auto';
+let _wasLight = null;
 
 function systemPrefersLight() {
   return !window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -26,7 +29,14 @@ function applyMode(mode) {
   _mode = mode;
 
   const light = mode === 'light' || (mode === 'auto' && systemPrefersLight());
+  const enteringDark = _wasLight === true && !light;
+
   html.classList.toggle('light', light);
+
+  if (enteringDark) {
+    document.dispatchEvent(new CustomEvent(THEME_TO_DARK));
+  }
+  _wasLight = light;
 
   btn.dataset.mode = mode;
   btn.setAttribute('aria-label', NEXT_LABEL[mode]);
