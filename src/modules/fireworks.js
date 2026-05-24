@@ -46,13 +46,12 @@ async function launchSnow() {
 
 	async function flurry() {
 		const timeLeft = end - Date.now();
-		const ticks = Math.max(200, 500 * (timeLeft / duration));
 		skew = Math.max(0.8, skew - 0.001);
 
 		await confetti({
 			particleCount: 1,
 			startVelocity: 0,
-			ticks,
+			ticks: 600,
 			origin: {
 				x: Math.random(),
 				y: Math.random() * skew - 0.2,
