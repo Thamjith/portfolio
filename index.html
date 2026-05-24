@@ -138,7 +138,7 @@
 			}
 		</style>
 
-		<!-- Pre-apply theme class before first paint to prevent flash -->
+		<!-- Pre-apply theme + HDR classes before first paint to prevent flash -->
 		<script>
 			(function () {
 				var saved = localStorage.getItem('theme');
@@ -148,6 +148,13 @@
 					(mode === 'auto' &&
 						!window.matchMedia('(prefers-color-scheme: dark)').matches);
 				if (light) document.documentElement.classList.add('light');
+
+				if (window.matchMedia('(dynamic-range: high)').matches) {
+					var hdr = localStorage.getItem('hdr');
+					if (hdr === null || hdr === 'true') {
+						document.documentElement.classList.add('hdr');
+					}
+				}
 			})();
 		</script>
 
@@ -188,6 +195,17 @@
 			</ul>
 
 			<div class="nav-controls">
+				<!-- HDR toggle (only shown on HDR-capable displays) -->
+				<button
+					class="hdr-toggle"
+					id="hdrToggle"
+					aria-label="Disable HDR mode"
+					aria-pressed="true"
+					data-hdr="on"
+					type="button"
+					hidden
+				>HDR</button>
+
 				<!-- Theme toggle (cycles: dark → light → auto) -->
 				<button
 					class="theme-toggle"

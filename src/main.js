@@ -10,6 +10,7 @@ import { inject } from '@vercel/analytics';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 
 import { initTheme }       from './modules/theme.js';
+import { initHDR }         from './modules/hdr.js';
 import { initCursor }      from './modules/cursor.js';
 import { initParticles }   from './modules/particles.js';
 import { initNav }         from './modules/nav.js';
@@ -49,6 +50,7 @@ if (aboutExp) aboutExp.textContent = `${expYears}+`;
 
 // Theme must initialise first (sets html.light before paint)
 initTheme();
+initHDR();
 
 // Visual effects
 initCursor();

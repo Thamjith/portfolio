@@ -38,6 +38,35 @@
   color-scheme: dark;
 }
 
+// ── HDR mode — wide-gamut, high-contrast color boost ─────
+// Applied when html.hdr is set and the display reports
+// dynamic-range: high. Colors push into P3 / Rec.2020.
+html.hdr:not(.light) {
+  --accent:  oklch(88% 0.37 195);
+  --accent2: oklch(84% 0.38 270);
+  --accent3: oklch(84% 0.38 320);
+  --text:    oklch(97% 0.006 240);
+  --muted:   oklch(52% 0.06 240);
+  --bg:      oklch(4%  0.025 240);
+  --bg2:     oklch(6%  0.03  240);
+  --surface:  oklch(8%  0.04 240);
+  --surface2: oklch(11% 0.05 240);
+  --border:   oklch(88% 0.37 195 / 0.14);
+
+  --particle-lightness:    92%;
+  --particle-line-alpha:   0.28;
+  --particle-mouse-alpha:  0.65;
+
+  --hdr-glow:      0 0 14px oklch(88% 0.37 195 / 0.5), 0 0 36px oklch(88% 0.37 195 / 0.2);
+  --hdr-text-glow: 0 0 10px oklch(88% 0.37 195 / 0.55);
+}
+
+html.hdr.light {
+  --accent:  oklch(58% 0.30 195);
+  --accent2: oklch(55% 0.30 270);
+  --accent3: oklch(55% 0.30 320);
+}
+
 html.light {
   // Backgrounds
   --bg:      #f0f4ff;

@@ -39,9 +39,14 @@ nav {
     letter-spacing: 2px;
     text-decoration: none;
     cursor: none;
+    transition: text-shadow t.$ease-base;
 
     @include t.coarse {
       cursor: pointer;
+    }
+
+    html.hdr:not(.light) & {
+      text-shadow: var(--hdr-text-glow, none);
     }
   }
 
@@ -102,6 +107,51 @@ nav {
     display: flex;
     align-items: center;
     gap: t.$sp-3;
+  }
+
+  // ── HDR toggle ─────────────────────────────────────────
+  .hdr-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: t.$radius-circle;
+    border: 1.5px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: t.$font-mono;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: border-color t.$ease-base, background t.$ease-base, color t.$ease-base, transform t.$ease-base, box-shadow t.$ease-base;
+    flex-shrink: 0;
+
+    @include t.coarse {
+      cursor: pointer;
+    }
+
+    &:hover {
+      border-color: var(--accent);
+      transform: scale(1.08);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    &[data-hdr='on'] {
+      border-color: var(--accent);
+      color: var(--accent);
+
+      html.hdr:not(.light) & {
+        box-shadow: var(--hdr-glow, none);
+        text-shadow: var(--hdr-text-glow, none);
+      }
+    }
   }
 
   // ── Theme toggle ───────────────────────────────────────
