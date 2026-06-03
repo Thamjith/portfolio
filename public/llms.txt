@@ -46,7 +46,7 @@ Single-page layout; section anchors below.
 
 - [HangPlan](https://hangplan.in): Full-stack social planning app for gatherings and staying connected. In development. [Frontend](https://github.com/Thamjith/Hangplan-frontend) · [Backend](https://github.com/Thamjith/Hangplan-backend). React, Redux Toolkit, Zod, Spring Boot, PostgreSQL, Nginx
 - [Straum](https://straum.thamjiththaha.com/): Browser P2P chat, voice, video, and file sharing (no accounts, WebRTC, Signal-grade encryption). In development. [GitHub](https://github.com/Thamjith/Straum). React, TypeScript, WebRTC, Vite
-- [Imacto](https://imacto.thamjiththaha.com/): Client-side image studio (crop, compress, convert, rotate, watermark). In development. [GitHub](https://github.com/Thamjith/Imacto). React, Vite, Canvas API
+- [Imacto](https://imacto.thamjiththaha.com/): Client-side image studio (crop, compress, convert, rotate, watermark). [GitHub](https://github.com/Thamjith/Imacto). React, Vite, Canvas API
 
 ## Contact and profiles
 
