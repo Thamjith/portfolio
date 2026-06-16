@@ -10,12 +10,17 @@ export function initNav() {
   const mobileMenu  = document.getElementById('mobile-menu');
   const mainContent = document.getElementById('main-content');
   const footer      = document.querySelector('footer[role="contentinfo"]');
-  const mobileLinks = mobileMenu.querySelectorAll('a');
+
+  if (!nav) return;
 
   // ── Scroll → frosted-glass ─────────────────────────────
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
   }, { passive: true });
+
+  if (!hamburger || !mobileMenu) return;
+
+  const mobileLinks = mobileMenu.querySelectorAll('a');
 
   // ── Hamburger toggle ───────────────────────────────────
   function openMenu() {

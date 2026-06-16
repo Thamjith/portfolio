@@ -18,10 +18,23 @@ export function initReveal() {
 
   const observer = new IntersectionObserver(
     entries => entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible');
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
     }),
     { threshold: 0.1 }
   );
 
   all.forEach(el => observer.observe(el));
+
+  // Above-the-fold items may not intersect on first paint — show them immediately.
+  requestAnimationFrame(() => {
+    all.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      }
+    });
+  });
 }

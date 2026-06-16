@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Private resource links."
+		/>
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="theme-color" content="#0c0c0f" />
+		<title>Links</title>
+
+		<link rel="icon" href="/icons/favicon.ico" sizes="any" />
+		<link rel="icon" type="image/png" href="/icons/favicon-32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/icons/favicon-16.png" sizes="16x16" />
+		<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+		<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<style>
+			body {
+				opacity: 0;
+			}
+		</style>
+
+		<script>
+			(function () {
+				var saved = localStorage.getItem('theme');
+				var mode = ['dark', 'light', 'auto'].includes(saved) ? saved : 'light';
+				var light =
+					mode === 'light' ||
+					(mode === 'auto' &&
+						!window.matchMedia('(prefers-color-scheme: dark)').matches);
+				if (light) document.documentElement.classList.add('light');
+			})();
+		</script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script type="module" src="/src/links.js"></script>
+	</head>
+	<body>
+		<a class="skip-link" href="#main-content">Skip to main content</a>
+
+		<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+		<div id="cursor" aria-hidden="true">
+			<div class="cursor-ring"></div>
+			<div class="cursor-dot"></div>
+		</div>
+
+		<nav id="nav" aria-label="Page navigation">
+			<span class="nav-logo" aria-hidden="true">Links</span>
+
+			<div class="nav-controls">
+				<button
+					class="theme-toggle"
+					id="themeToggle"
+					aria-label="Switch to auto (system) mode"
+					data-mode="light"
+					type="button"
+				>
+					<svg
+						class="icon-sun"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+						focusable="false"
+					>
+						<circle cx="12" cy="12" r="4"></circle>
+						<line x1="12" y1="2" x2="12" y2="4"></line>
+						<line x1="12" y1="20" x2="12" y2="22"></line>
+						<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+						<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+						<line x1="2" y1="12" x2="4" y2="12"></line>
+						<line x1="20" y1="12" x2="22" y2="12"></line>
+						<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+						<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+					</svg>
+					<svg
+						class="icon-moon"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+						focusable="false"
+					>
+						<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+					</svg>
+					<svg
+						class="icon-auto"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+						focusable="false"
+					>
+						<rect x="2" y="3" width="20" height="14" rx="2"></rect>
+						<line x1="8" y1="21" x2="16" y2="21"></line>
+						<line x1="12" y1="17" x2="12" y2="21"></line>
+					</svg>
+				</button>
+			</div>
+		</nav>
+
+		<main id="main-content">
+			<section class="links-page" aria-labelledby="links-heading">
+				<header class="links-header">
+					<p class="section-label">Private</p>
+					<h1 id="links-heading" class="links-title">
+						My <span>Links</span>
+					</h1>
+					<p class="links-sub">
+						Quick access to files and resources I keep handy.
+					</p>
+				</header>
+
+				<div class="links-grid">
+					<article class="links-group">
+						<div class="links-group__head">
+							<div class="links-group__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24">
+									<path
+										d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+									/>
+								</svg>
+							</div>
+							<h2 class="links-group__title">Resume &amp; CV</h2>
+						</div>
+						<ul class="links-group__list" role="list">
+							<li>
+								<a
+									class="resource-card"
+									href="/resume/thamjiththaha.pdf"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<span class="resource-card__type" aria-hidden="true">
+										<svg viewBox="0 0 24 24">
+											<path
+												d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+											/>
+										</svg>
+									</span>
+									<span class="resource-card__body">
+										<span class="resource-card__name">Resume (PDF)</span>
+										<span class="resource-card__desc"
+											>Latest CV for roles, referrals, and collaborations</span
+										>
+									</span>
+									<span class="resource-card__meta">
+										<span class="resource-card__badge">PDF</span>
+										<span class="resource-card__arrow" aria-hidden="true">
+											<svg viewBox="0 0 24 24">
+												<path d="M7 17L17 7M17 7H7M17 7V17" />
+											</svg>
+										</span>
+									</span>
+									<span class="sr-only">(opens in new tab)</span>
+								</a>
+							</li>
+							<li>
+								<a
+									class="resource-card"
+									href="/resume/thamjiththaha.docx"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<span class="resource-card__type" aria-hidden="true">
+										<svg viewBox="0 0 24 24">
+											<path
+												d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+											/>
+										</svg>
+									</span>
+									<span class="resource-card__body">
+										<span class="resource-card__name">Resume (Word)</span>
+										<span class="resource-card__desc"
+											>Editable DOCX version of the same resume</span
+										>
+									</span>
+									<span class="resource-card__meta">
+										<span class="resource-card__badge">DOCX</span>
+										<span class="resource-card__arrow" aria-hidden="true">
+											<svg viewBox="0 0 24 24">
+												<path d="M7 17L17 7M17 7H7M17 7V17" />
+											</svg>
+										</span>
+									</span>
+									<span class="sr-only">(opens in new tab)</span>
+								</a>
+							</li>
+						</ul>
+					</article>
+
+					<article class="links-group">
+						<div class="links-group__head">
+							<div class="links-group__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24">
+									<path
+										d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"
+									/>
+								</svg>
+							</div>
+							<h2 class="links-group__title">Fitness</h2>
+						</div>
+						<ul class="links-group__list" role="list">
+							<li>
+								<a
+									class="resource-card"
+									href="/documents/workout-routine.pdf"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<span class="resource-card__type" aria-hidden="true">
+										<svg viewBox="0 0 24 24">
+											<path
+												d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+											/>
+										</svg>
+									</span>
+									<span class="resource-card__body">
+										<span class="resource-card__name">Workout Routine</span>
+										<span class="resource-card__desc"
+											>Weekly training plan — exercises, sets, and schedule</span
+										>
+									</span>
+									<span class="resource-card__meta">
+										<span class="resource-card__badge">PDF</span>
+										<span class="resource-card__arrow" aria-hidden="true">
+											<svg viewBox="0 0 24 24">
+												<path d="M7 17L17 7M17 7H7M17 7V17" />
+											</svg>
+										</span>
+									</span>
+									<span class="sr-only">(opens in new tab)</span>
+								</a>
+							</li>
+						</ul>
+					</article>
+
+					<article class="links-group">
+						<div class="links-group__head">
+							<div class="links-group__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24">
+									<path
+										d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+									/>
+								</svg>
+							</div>
+							<h2 class="links-group__title">Site &amp; Reference</h2>
+						</div>
+						<ul class="links-group__list" role="list">
+							<li>
+								<a class="resource-card" href="/llms.txt" target="_blank" rel="noopener noreferrer">
+									<span class="resource-card__type" aria-hidden="true">
+										<svg viewBox="0 0 24 24">
+											<path
+												d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+											/>
+										</svg>
+									</span>
+									<span class="resource-card__body">
+										<span class="resource-card__name">LLMs.txt</span>
+										<span class="resource-card__desc"
+											>Structured portfolio summary for AI assistants and crawlers</span
+										>
+									</span>
+									<span class="resource-card__meta">
+										<span class="resource-card__badge">TXT</span>
+										<span class="resource-card__arrow" aria-hidden="true">
+											<svg viewBox="0 0 24 24">
+												<path d="M7 17L17 7M17 7H7M17 7V17" />
+											</svg>
+										</span>
+									</span>
+									<span class="sr-only">(opens in new tab)</span>
+								</a>
+							</li>
+							<li>
+								<a
+									class="resource-card"
+									href="/images/profile-picture.png"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<span class="resource-card__type" aria-hidden="true">
+										<svg viewBox="0 0 24 24">
+											<path
+												d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
+											/>
+										</svg>
+									</span>
+									<span class="resource-card__body">
+										<span class="resource-card__name">Profile Photo</span>
+										<span class="resource-card__desc"
+											>High-resolution headshot for press, bios, and events</span
+										>
+									</span>
+									<span class="resource-card__meta">
+										<span class="resource-card__badge">PNG</span>
+										<span class="resource-card__arrow" aria-hidden="true">
+											<svg viewBox="0 0 24 24">
+												<path d="M7 17L17 7M17 7H7M17 7V17" />
+											</svg>
+										</span>
+									</span>
+									<span class="sr-only">(opens in new tab)</span>
+								</a>
+							</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+		</main>
+
+		<footer role="contentinfo">
+			<span>© <span id="footer-year"></span> Thamjith Thaha</span>
+		</footer>
+	</body>
+</html>
